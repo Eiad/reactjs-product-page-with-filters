@@ -1,7 +1,6 @@
 <h2>Product Details Page - Filter product without refreshing using ReactJS</h2>
 
-<p style="text-align: center;">Live Preview Sandbox: <a href="https://codesandbox.io/s/trusting-pine-4gnvd?file=/src/App.js">https://codesandbox.io/s/trusting-pine-4gnvd?file=/src/App.js</a></p>
-
+<p style="text-align: center;"><a href="https://4gnvd.csb.app/">Live Preview</a> | <a href="https://codesandbox.io/s/trusting-pine-4gnvd?file=/src/App.js">Sandbox Code</a></p>
 <br />
 
 
