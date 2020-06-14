@@ -6,8 +6,8 @@ export const products = [
     availSize: "S, M, L",
     smallPicture: "https://i.imgur.com/Iyy2jVQ.jpg",
     color: "red",
-    sleevType: "T-Shirt Y Collar",
-    brand: "Louis Vuitton",
+    sleevType: "Y Collar",
+    brand: "V Collar",
     price: "250",
     currency: "AED",
     descreption:
@@ -25,8 +25,8 @@ export const products = [
     availSize: "M, L, XL",
     smallPicture: "https://i.imgur.com/QsZs2Uf.jpg",
     color: "red",
-    sleevType: "T-Shirt Y Collar",
-    brand: "Louis Vuitton",
+    sleevType: "Formal",
+    brand: "Tory Burch",
     price: "300",
     currency: "AED",
     descreption:
@@ -43,8 +43,8 @@ export const products = [
     availSize: "S, XL, XXL",
     smallPicture: "https://i.imgur.com/gbQfOnC.jpg",
     color: "red",
-    sleevType: "T-Shirt Y Collar",
-    brand: "Louis Vuitton",
+    sleevType: "Round",
+    brand: "Carolina Herrera",
     price: "180",
     currency: "AED",
     descreption:
