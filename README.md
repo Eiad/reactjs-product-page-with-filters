@@ -5,4 +5,4 @@
 <br />
 
 
-<p style="text-align: center;"><img src="http://ieiad.com/d-links/pdp-mob-reactjs.gif"></p>
+<p style="text-align: center;"><img src="https://i.imgur.com/6s7TCGu.jpg"></p>
