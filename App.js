@@ -1,61 +1,95 @@
-export const products = [
-  {
-    id: 1,
-    productTitle: "Tiger Shirt - Red",
-    isActive: "red-border",
-    availSize: "S, M, L",
-    smallPicture: "https://i.imgur.com/Iyy2jVQ.jpg",
-    color: "red",
-    sleevType: "T-Shirt Y Collar",
-    brand: "Louis Vuitton",
-    price: "250",
-    currency: "AED",
-    descreption:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-    thumb1: "https://i.imgur.com/6s7TCGu.jpg",
-    thumb2: "https://i.imgur.com/JZUsesm.jpg",
-    thumb3: "https://i.imgur.com/EBeCFad.jpg",
-    thumb4: "https://i.imgur.com/EBeCFad.jpg"
-  },
+import React from "react";
+import { products } from "./shirtsData";
 
-  {
-    id: 2,
-    productTitle: "Tiger Shirt - Black",
-    isActive: "black-border",
-    availSize: "M, L, XL",
-    smallPicture: "https://i.imgur.com/QsZs2Uf.jpg",
-    color: "red",
-    sleevType: "T-Shirt Y Collar",
-    brand: "Louis Vuitton",
-    price: "300",
-    currency: "AED",
-    descreption:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form",
-    thumb1: "https://i.imgur.com/H3zmz0C.jpg",
-    thumb2: "https://i.imgur.com/B0iZtjQ.jpg",
-    thumb3: "https://i.imgur.com/SrIXHYT.jpg",
-    thumb4: "https://i.imgur.com/iQQuXJV.jpg"
-  },
-  {
-    id: 3,
-    productTitle: "Tiger Shirt - Grey",
-    isActive: "grey-border",
-    availSize: "S, XL, XXL",
-    smallPicture: "https://i.imgur.com/gbQfOnC.jpg",
-    color: "red",
-    sleevType: "T-Shirt Y Collar",
-    brand: "Louis Vuitton",
-    price: "180",
-    currency: "AED",
-    descreption:
-      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.",
-    thumb1: "https://i.imgur.com/NcbLgoQ.jpg",
-    thumb2: "https://i.imgur.com/Mh9uVMb.jpg",
-    thumb3: "https://i.imgur.com/ZDYo15Z.jpg",
-    thumb4: "https://i.imgur.com/HB3ro5o.jpg"
+export default class ProductList extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      index: 0
+    };
   }
-];
 
-export default {
-  products
-};
+  goToNext1 = () => {
+    this.setState({ index: 0 % products.length });
+  };
+  goToNext2 = () => {
+    this.setState({ index: 1 % products.length });
+  };
+  goToNext3 = () => {
+    this.setState({ index: 2 % products.length });
+  };
+
+  render() {
+    const product = products[this.state.index];
+    return (
+      <div>
+        <div className="main-container">
+          <header>
+            <a className="logo">
+              <img
+                src="https://placehold.it/468x60/f2f2f2/000?text=LOGO"
+                alt=""
+              />
+            </a>
+            <div className="search-bar">
+              <form action="">
+                <input type="text" placeholder="Search..." />
+                <button type="submit">
+                  <i className="fa fa-search" />
+                </button>
+              </form>
+            </div>
+          </header>
+          <section className="main-body">
+            <div className="main-product-info">
+              <img src={product.smallPicture} alt="" />
+
+              <h4>
+                {product.productTitle} <br />
+                <small> by {product.brand}</small>
+              </h4>
+              <p>
+                {product.price} {product.currency}
+              </p>
+            </div>
+            <div className="sizes">
+              <p>
+                Available Sizes: <span>{product.availSize}</span> <br />
+                Neck type: <span>{product.sleevType}</span>
+              </p>
+            </div>
+            <div className="colors">
+              <button className="red" onClick={this.goToNext1} />
+              <button className="black" onClick={this.goToNext2} />
+              <button className="grey" onClick={this.goToNext3} />
+            </div>
+            <button className="a2c">Add to cart</button>
+
+            <div className="description">
+              <h5>Product description</h5>
+              <p>{product.descreption}</p>
+            </div>
+
+            <hr />
+            <h5>Products Complement your selection</h5>
+
+            <div className="related-products section group">
+              <div className="col span_1_of_4">
+                <img src={product.thumb1} alt="" />
+              </div>
+              <div className="col span_1_of_4">
+                <img src={product.thumb2} alt="" />
+              </div>
+              <div className="col span_1_of_4">
+                <img src={product.thumb3} alt="" />
+              </div>
+              <div className="col span_1_of_4">
+                <img src={product.thumb4} alt="" />
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    );
+  }
+}
