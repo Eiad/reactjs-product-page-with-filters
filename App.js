@@ -9,13 +9,13 @@ export default class ProductList extends React.Component {
     };
   }
 
-  goToNext1 = () => {
+  goToRed = () => {
     this.setState({ index: 0 % products.length });
   };
-  goToNext2 = () => {
+  goToBlack = () => {
     this.setState({ index: 1 % products.length });
   };
-  goToNext3 = () => {
+  goToGrey = () => {
     this.setState({ index: 2 % products.length });
   };
 
@@ -26,11 +26,24 @@ export default class ProductList extends React.Component {
         <div className="main-container">
           <header>
             <a className="logo">
-              <img
-                src="https://placehold.it/468x60/f2f2f2/000?text=LOGO"
-                alt=""
-              />
+              <img src="https://i.imgur.com/TSBasZJ.jpg" alt="" />
             </a>
+            <div className="thenav">
+              <ul className="nav-ul section group">
+                <li className="col span_1_of_4">
+                  <a>Men</a>
+                </li>
+                <li className="col span_1_of_4">
+                  <a>Women</a>
+                </li>
+                <li className="col span_1_of_4">
+                  <a>Kids</a>
+                </li>
+                <li className="col span_1_of_4">
+                  <a>FTW</a>
+                </li>
+              </ul>
+            </div>
             <div className="search-bar">
               <form action="">
                 <input type="text" placeholder="Search..." />
@@ -58,10 +71,10 @@ export default class ProductList extends React.Component {
                 Neck type: <span>{product.sleevType}</span>
               </p>
             </div>
-            <div className="colors">
-              <button className="red" onClick={this.goToNext1} />
-              <button className="black" onClick={this.goToNext2} />
-              <button className="grey" onClick={this.goToNext3} />
+            <div className={product.isActive}>
+              <button className="red" onClick={this.goToRed} />
+              <button className="black" onClick={this.goToBlack} />
+              <button className="grey" onClick={this.goToGrey} />
             </div>
             <button className="a2c">Add to cart</button>
 
